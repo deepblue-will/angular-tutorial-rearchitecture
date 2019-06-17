@@ -13,6 +13,7 @@ import { HeroesRepository } from './repositories/heroes.repository';
 import { HeroStore } from './state/hero/hero.store';
 import { HeroUsecase } from './state/hero/hero.usecase';
 import { HeroQuery } from './state/hero/hero.query';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeroQuery } from './state/hero/hero.query';
     TutorialRootComponent,
     HeroDetailPageComponent,
     HerosPageComponent,
+    HeroComponent,
   ],
   imports: [
     CommonModule,
