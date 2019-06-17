@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HeroesRepository } from '../../repositories/heroes.repository';
-import { HeroEntity } from '../../types';
+import { HeroUsecase } from '../../state/hero/hero.usecase';
+import { HeroQuery } from '../../state/hero/hero.query';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -9,15 +9,15 @@ import { HeroEntity } from '../../types';
   styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent implements OnInit {
-  heroes: HeroEntity[] = [];
+  heroes$ = this.query.heroes$;
 
-  constructor(private repo: HeroesRepository) {}
+  constructor(private usecase: HeroUsecase, private query: HeroQuery) {}
 
   ngOnInit() {
     this.getHeroes();
   }
 
   getHeroes(): void {
-    this.repo.getHeroes().subscribe(heroes => (this.heroes = heroes.slice(1, 5)));
+    this.usecase.getHeroes();
   }
 }

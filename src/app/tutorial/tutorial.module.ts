@@ -10,6 +10,9 @@ import { HeroDetailPageComponent } from './pages/hero-detail-page/hero-detail-pa
 import { HerosPageComponent } from './pages/heros-page/heros-page.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroesRepository } from './repositories/heroes.repository';
+import { HeroStore } from './state/hero/hero.store';
+import { HeroUsecase } from './state/hero/hero.usecase';
+import { HeroQuery } from './state/hero/hero.query';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,6 @@ import { HeroesRepository } from './repositories/heroes.repository';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
   ],
-  providers: [HeroesRepository, InMemoryDataService],
+  providers: [HeroesRepository, InMemoryDataService, HeroStore, HeroUsecase, HeroQuery],
 })
 export class TutorialModule {}
