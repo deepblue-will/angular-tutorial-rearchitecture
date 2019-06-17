@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tutorial-root',
   templateUrl: './tutorial-root.component.html',
-  styleUrls: ['./tutorial-root.component.scss']
+  styleUrls: ['./tutorial-root.component.scss'],
 })
-export class TutorialRootComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class TutorialRootComponent {
+  title = 'Tour of Heroes';
 }
