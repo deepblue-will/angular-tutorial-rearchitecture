@@ -53,7 +53,7 @@ export class HeroesRepository {
   //////// Save methods //////////
 
   /** POST: サーバーに新しいヒーローを登録する */
-  addHero(hero: HeroEntity): Observable<HeroResponse> {
+  addHero(hero: Partial<HeroEntity>): Observable<HeroResponse> {
     return this.http
       .post<HeroResponse>(this.heroesUrl, hero, httpOptions)
       .pipe(catchError(this.handleError<HeroEntity>('addHero')));

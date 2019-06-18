@@ -37,6 +37,10 @@ export class HeroUsecase {
     });
   }
 
+  add(params: { name: string }) {
+    this.repo.addHero(params).subscribe(entity => this.store.add(new HeroModel(entity)));
+  }
+
   delete(id: number) {
     this.repo.deleteHero(id).subscribe();
     this.store.remove(id);

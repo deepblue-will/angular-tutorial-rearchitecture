@@ -29,9 +29,7 @@ export class HerosPageComponent implements OnInit {
       return;
     }
 
-    // this.heroService.addHero({ name } as Hero).subscribe(hero => {
-    //   this.heroes.push(hero);
-    // });
+    this.usecase.add({ name });
   }
 
   delete(hero: HeroModel): void {
