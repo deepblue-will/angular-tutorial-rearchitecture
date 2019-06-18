@@ -35,8 +35,7 @@ export class HerosPageComponent implements OnInit {
   }
 
   delete(hero: HeroModel): void {
-    // this.heroes = this.heroes.filter(h => h !== hero);
-    // this.heroService.deleteHero(hero).subscribe();
+    this.usecase.delete(hero.id);
   }
 
   navigateToDetail(hero: HeroModel) {

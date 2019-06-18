@@ -36,4 +36,9 @@ export class HeroUsecase {
       this.store.upsert(entity.id, new HeroModel(entity), { baseClass: HeroModel });
     });
   }
+
+  delete(id: number) {
+    this.repo.deleteHero(id).subscribe();
+    this.store.remove(id);
+  }
 }
