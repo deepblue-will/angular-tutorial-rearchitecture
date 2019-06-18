@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { TutorialRoutingModule } from './tutorial-routing.module';
@@ -31,6 +32,7 @@ import { HeroSearchInputComponent } from './components/hero-search-input/hero-se
   ],
   imports: [
     CommonModule,
+    FormsModule,
     TutorialRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),

@@ -8,7 +8,11 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, environment.production ? [] : AkitaNgDevtools.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
