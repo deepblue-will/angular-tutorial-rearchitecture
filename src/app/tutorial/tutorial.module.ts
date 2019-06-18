@@ -16,6 +16,7 @@ import { HeroQuery } from './state/hero/hero.query';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroSearchContainerComponent } from './containers/hero-search-container/hero-search-container.component';
 import { HeroesContainerComponent } from './containers/heroes-container/heroes-container.component';
+import { HeroSearchInputComponent } from './components/hero-search-input/hero-search-input.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HeroesContainerComponent } from './containers/heroes-container/heroes-c
     HeroComponent,
     HeroSearchContainerComponent,
     HeroesContainerComponent,
+    HeroSearchInputComponent,
   ],
   imports: [
     CommonModule,

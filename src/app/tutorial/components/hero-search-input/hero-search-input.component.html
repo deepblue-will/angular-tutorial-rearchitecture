@@ -1,0 +1,9 @@
+<input #searchBox id="search-box" (input)="inputText.emit(searchBox.value)" />
+
+<ul class="search-result">
+  <li *ngFor="let hero of heroes">
+    <a (click)="clickHero.emit(hero)">
+      {{ hero.name }}
+    </a>
+  </li>
+</ul>

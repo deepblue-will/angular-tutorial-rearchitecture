@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { HeroUsecase } from '../../state/hero/hero.usecase';
 import { HeroQuery } from '../../state/hero/hero.query';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { HeroModel } from '../../state/hero/hero.model';
 
 @Component({
   selector: 'app-hero-search-container',
@@ -14,7 +16,7 @@ export class HeroSearchContainerComponent implements OnInit {
 
   private searchTerms = new Subject<string>();
 
-  constructor(private usecase: HeroUsecase, private query: HeroQuery) {}
+  constructor(private router: Router, private usecase: HeroUsecase, private query: HeroQuery) {}
 
   ngOnInit() {
     this.searchTerms
@@ -28,5 +30,9 @@ export class HeroSearchContainerComponent implements OnInit {
   // 検索語をobservableストリームにpushする
   search(term: string): void {
     this.searchTerms.next(term);
+  }
+
+  navigateToDatail(hero: HeroModel) {
+    this.router.navigateByUrl(`/detail/${hero.id}`);
   }
 }
