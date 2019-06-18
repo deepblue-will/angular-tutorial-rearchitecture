@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { HeroUsecase } from '../../state/hero/hero.usecase';
 import { HeroQuery } from '../../state/hero/hero.query';
 import { HeroModel } from '../../state/hero/hero.model';
@@ -11,7 +13,7 @@ import { HeroModel } from '../../state/hero/hero.model';
 export class HerosPageComponent implements OnInit {
   heroes$ = this.query.heroes$;
 
-  constructor(private usecase: HeroUsecase, private query: HeroQuery) {}
+  constructor(private router: Router, private usecase: HeroUsecase, private query: HeroQuery) {}
 
   ngOnInit() {
     this.getHeroes();
@@ -35,5 +37,9 @@ export class HerosPageComponent implements OnInit {
   delete(hero: HeroModel): void {
     // this.heroes = this.heroes.filter(h => h !== hero);
     // this.heroService.deleteHero(hero).subscribe();
+  }
+
+  navigateToDetail(hero: HeroModel) {
+    this.router.navigateByUrl(`/detail/${hero.id}`);
   }
 }

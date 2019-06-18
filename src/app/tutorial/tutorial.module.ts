@@ -19,6 +19,7 @@ import { HeroSearchContainerComponent } from './containers/hero-search-container
 import { HeroesContainerComponent } from './containers/heroes-container/heroes-container.component';
 import { HeroSearchInputComponent } from './components/hero-search-input/hero-search-input.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { RemovableHeroListComponent } from './components/removable-hero-list/removable-hero-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
     HeroesContainerComponent,
     HeroSearchInputComponent,
     HeroFormComponent,
+    RemovableHeroListComponent,
   ],
   imports: [
     CommonModule,
