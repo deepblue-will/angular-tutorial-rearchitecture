@@ -13,4 +13,10 @@ export class HeroUsecase {
       this.store.set(res.map(r => new HeroModel(r)));
     });
   }
+
+  search(term: string) {
+    this.repo.searchHeroes(term).subscribe(heroes => {
+      this.store.update({ searchResult: heroes.map(h => new HeroModel(h)) });
+    });
+  }
 }

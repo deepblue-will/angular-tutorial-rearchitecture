@@ -1,0 +1,7 @@
+<div class="grid grid-pad">
+  <ng-container *ngIf="heroes$ | async as heroes">
+    <a *ngFor="let hero of heroes.slice(1, 4)" class="col-1-4" routerLink="/detail/{{ hero.id }}">
+      <app-hero [hero]="hero"></app-hero>
+    </a>
+  </ng-container>
+</div>
