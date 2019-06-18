@@ -1,0 +1,11 @@
+<form>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div>
+    <label
+      >name:
+      <input name='name' [(ngModel)]="form.name" placeholder="name" />
+    </label>
+  </div>
+  <button (click)="clickBack.emit()">go back</button>
+  <button (click)="clickSave.emit(form)">save</button>
+</form>

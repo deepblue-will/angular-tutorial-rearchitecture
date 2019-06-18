@@ -4,6 +4,7 @@ import { HeroStore } from './hero.store';
 import { HeroesRepository } from '../../repositories/heroes.repository';
 import { HeroModel } from './hero.model';
 import { HeroQuery } from './hero.query';
+import { HeroEntity } from '../../types';
 
 @Injectable()
 export class HeroUsecase {
@@ -28,5 +29,11 @@ export class HeroUsecase {
     }
 
     this.store.setActive(id);
+  }
+
+  update(entity: HeroEntity) {
+    this.repo.updateHero(entity).subscribe(() => {
+      this.store.upsert(entity.id, new HeroModel(entity), { baseClass: HeroModel });
+    });
   }
 }
