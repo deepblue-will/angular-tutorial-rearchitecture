@@ -8,4 +8,8 @@ export class HeroModel {
     this.id = entity.id;
     this.name = entity.name;
   }
+
+  get deletable() {
+    return this.id > 15;
+  }
 }
