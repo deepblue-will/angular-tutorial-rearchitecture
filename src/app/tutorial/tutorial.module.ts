@@ -20,6 +20,10 @@ import { HeroesContainerComponent } from './containers/heroes-container/heroes-c
 import { HeroSearchInputComponent } from './components/hero-search-input/hero-search-input.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { RemovableHeroListComponent } from './components/removable-hero-list/removable-hero-list.component';
+import { WeaponQuery } from './state/weapon/weapon.query';
+import { WeaponUsecase } from './state/weapon/weapon.usecase';
+import { WeaponStore } from './state/weapon/weapon.store';
+import { HeroTranslator } from './translators/hero.translator';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,16 @@ import { RemovableHeroListComponent } from './components/removable-hero-list/rem
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
   ],
-  providers: [HeroesRepository, InMemoryDataService, HeroStore, HeroUsecase, HeroQuery],
+  providers: [
+    HeroesRepository,
+    InMemoryDataService,
+    HeroStore,
+    HeroUsecase,
+    HeroQuery,
+    WeaponQuery,
+    WeaponUsecase,
+    WeaponStore,
+    HeroTranslator,
+  ],
 })
 export class TutorialModule {}

@@ -9,9 +9,9 @@ import { HeroEntity } from './types';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 11, name: 'Dr Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
+      { id: 11, name: 'Dr Nice', weaponId: 1 },
+      { id: 12, name: 'Narco', weaponId: 1 },
+      { id: 13, name: 'Bombasto', weaponId: 2 },
       { id: 14, name: 'Celeritas' },
       { id: 15, name: 'Magneta' },
       { id: 16, name: 'RubberMan' },

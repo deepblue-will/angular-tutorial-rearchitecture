@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { HeroUsecase } from '../../state/hero/hero.usecase';
 import { HeroQuery } from '../../state/hero/hero.query';
 import { HeroFormData } from '../../components/hero-form/hero-form.component';
+import { HeroModel } from '../../state/hero/hero.model';
 
 @Component({
   selector: 'app-hero-detail-page',
@@ -34,9 +35,10 @@ export class HeroDetailPageComponent implements OnInit {
     this.location.back();
   }
 
-  save(formData: HeroFormData): void {
+  save(hero: HeroModel, formData: HeroFormData): void {
     this.usecase.update({
       ...formData,
+      weaponId: hero.weapon ? hero.weapon.id : undefined,
     });
   }
 }
